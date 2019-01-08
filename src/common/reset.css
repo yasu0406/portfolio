@@ -31,67 +31,43 @@ time, mark, audio, video {
 h2, h3, h4, h5, h6 {
   color: #ffffff;
   font-weight: 100;
-  text-shadow: 5px 5px #131963;
+  text-shadow: 2px 2px #1319636b;
 }
 html { box-sizing: border-box; } *, *:before, *:after { box-sizing: inherit; }
-
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
     display:block;
 }
-
 nav ul {
     list-style:none;
 }
-
 blockquote, q {
     quotes:none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
     content:'';
     content:none;
 }
-
 a {
     margin:0;
     padding:0;
     vertical-align:baseline;
     background:transparent;
     color: #fff;
+    text-decoration: none;
 }
-
-/* change colours to suit your needs */
-ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
-}
-
-/* change colours to suit your needs */
-mark {
-    background-color:#ff9;
-    color:#000;
-    font-style:italic;
-    font-weight:bold;
-}
-
 del {
     text-decoration: line-through;
 }
-
 abbr[title], dfn[title] {
     border-bottom:1px dotted;
     cursor:help;
 }
-
 table {
     border-collapse:collapse;
     border-spacing:0;
 }
-
-/* change border colour to suit your needs */
 hr {
     display:block;
     height:1px;
@@ -117,6 +93,7 @@ button{
         appearance: none;
 }
 img {
+  width: 100%;
   margin: 0;
   padding: 0;
   vertical-align: bottom;
