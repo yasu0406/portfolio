@@ -7,6 +7,7 @@ import {
 import Home from "./home/Home";
 import About from "./about/About";
 import Works from "./works/Works";
+import WorksDetail from "./worksDetail/WorksDetail";
 import Navigation from "./common/Navigation";
 import './common/reset.css';
 import './common/common.css';
@@ -21,6 +22,7 @@ class Main extends Component {
                         <Route exact path="/" component={Home}/>
                         <Route path="/about" component={About}/>
                         <Route path="/works" component={Works}/>
+                        <Route path="/worksDetail" component={WorksDetail}/>
                     </div>
                 </div>
             </BrowserRouter>
