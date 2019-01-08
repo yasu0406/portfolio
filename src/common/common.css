@@ -3,7 +3,7 @@
 */
 /*********--CommonParts--***********/
 body {
-  background-color: #151c65;
+  background-color: #1b2fce;
   word-break:break-all;
   overflow-x: hidden;
   font-family: 'Helvetica', sans-serif;
@@ -14,8 +14,33 @@ body {
 h1 {
   font-size: 7.0rem;
 }
+h2 {
+  font-size: 5.0rem;
+}
 p,li {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+}
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+.btn {
+  max-width: 180px;
+  width: 100%;
+  padding: 10px 0;
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem;
+  background-color: #0068E2;
+  border: 2px solid #0068E2;
+  transition: .5s;
+}
+.btn:hover {
+  background-color: #fff;
+  color: #0068E2;
+  border: 2px solid #0068E2;
 }
 /* Navigation */
 .button_container {
@@ -78,6 +103,7 @@ p,li {
     opacity: 0.9;
     visibility: visible;
     height: 100%;
+    z-index: 1;
   }
   .overlay.open li {
     -webkit-animation: fadeInRight 0.5s ease forwards;
@@ -106,7 +132,7 @@ p,li {
     font-weight: 400;
     text-align: center;
   }
-  .overlay ul {
+  .overlay nav > ul {
     list-style: none;
     padding: 0;
     margin: 0 auto;
@@ -114,7 +140,7 @@ p,li {
     position: relative;
     height: 100%;
   }
-  .overlay ul li {
+  .overlay nav > ul > li {
     display: block;
     height: 25%;
     height: calc(100% / 4);
@@ -122,7 +148,7 @@ p,li {
     position: relative;
     opacity: 0;
   }
-  .overlay ul li a {
+  .overlay nav > ul > li > a {
     display: block;
     position: relative;
     color: #fff;
@@ -130,10 +156,10 @@ p,li {
     overflow: hidden;
     font-size: 5.0rem;
   }
-  .overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+  .overlay nav > ul > li > a:hover:after, .overlay nav > ul > li > a:focus:after, .overlay nav > ul > li > a:active:after {
     width: 100%;
   }
-  .overlay ul li a:after {
+  .overlay nav > ul > li > a:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -145,7 +171,9 @@ p,li {
     background: #fff;
     transition: 0.35s;
   }
-  
+nav ul.sns {
+  justify-content: space-between;
+}
   @-webkit-keyframes fadeInRight {
     0% {
       opacity: 0;
@@ -156,7 +184,7 @@ p,li {
       left: 0;
     }
   }
-  
+
   @keyframes fadeInRight {
     0% {
       opacity: 0;
@@ -167,3 +195,31 @@ p,li {
       left: 0;
     }
   }
+
+  /* SNS */
+ul.sns {
+  display: flex;
+}
+.fa {
+  width: 40px;
+  padding: 10px 0px;
+  font-size: 2.0rem;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 100%;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-github {
+  background: #000000;
+}
+.fa:hover {
+  opacity: 0.7;
+}
