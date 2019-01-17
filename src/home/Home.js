@@ -1,75 +1,43 @@
 import React, { Component } from "react";
-import Anime from 'react-anime';
+
 import {
     NavLink,
 } from "react-router-dom";
 import './home.css';
+import delighters from '../common/delighters';
 class Home extends Component {
-    constructor() {
-        super();
-        this.state = {
-
-        }
+    componentDidMount() {
+        delighters.init();
     }
+
     render() {
         return (
-            <div>
-                <div className="main-visual">
-                    <Anime easing="easeInOutQuad"
-                           duration={1000}
-                           direction="delay"
-                           delay={100}
-                           opacity={[0,1]}
-                           translateX={['-500%',0]}>
-                        <div className="left">
-                            <div>
-                                <Anime easing="easeInOutQuad"
-                                       duration={1000}
-                                       direction="delay"
-                                       delay={500}
-                                       translateX={['-500%',0]}>
-                                    <h1>HELLO</h1>
-                                </Anime>
-                                <ul>
-                                    <Anime easing="easeInOutQuad"
-                                           duration={1000}
-                                           direction="delay"
-                                           delay={1000}
-                                           translateX={['-500%',0]}>
-                                        <li>I’m Yasuhiro.<br/>Welcome to my website.</li>
-                                        <li>I’m Front End developer.<span>I love creative</span></li>
-                                    </Anime>
-                                    <li>
-                                        <Anime easing="easeInOutQuad"
-                                               duration={1000}
-                                               direction="delay"
-                                               delay={1500}
-                                               translateX={['-500%',0]}>
-                                            <ul className="sns">
-                                              <li><a href="https://www.linkedin.com/in/yasuhiro-katayama-118423160/" target="_blank" className="fa fa-linkedin"></a></li>
-                                              <li><a href="https://github.com/yasu0406" target="_blank" className="fa fa-github"></a></li>
-                                              <li><a href="https://www.facebook.com/yasuhiro.katayama2" target="_blank" className="fa fa-facebook"></a></li>
-                                            </ul>
-                                        </Anime>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </Anime>
+            <div className="home">
+                <section>
+                    <ul className="main-visual">
+                        <li className="left">
+                            <ul data-delighter>
+                                <li><h1>Hello World</h1></li>
+                                <li>I’m Yasuhiro.<br/>Welcome to my website.</li>
+                                <li>I’m Front End developer.<span>I love creative</span></li>
+                                <li>
+                                    <ul className="sns">
+                                        <li><a href="https://www.linkedin.com/in/yasuhiro-katayama-118423160/" target="_blank" className="fa fa-linkedin"></a></li>
+                                        <li><a href="https://github.com/yasu0406" target="_blank" className="fa fa-github"></a></li>
+                                        <li><a href="https://www.facebook.com/yasuhiro.katayama2" target="_blank" className="fa fa-facebook"></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="right">
 
-                    <Anime easing="easeInOutQuad"
-                           duration={1000}
-                           direction="delay"
-                           delay={100}
-                           translateX={['500%',0]}>
-                        <div className="right">
-                        </div>
-                    </Anime>
-                </div>
+                        </li>
+                    </ul>
+                </section>
                 <section>
                     <ul>
                         <li>
-                            <ul className="container">
+                            <ul className="container" data-delighter>
                                 <li>
                                     <ul>
                                         <li>Android App</li>
@@ -82,8 +50,8 @@ class Home extends Component {
                             </ul>
                             <div className="color-box"></div>
                         </li>
-                        <li>
-                            <ul className="container">
+                        <li data-delighter="start:0.25">
+                            <ul className="container" data-delighter>
                                 <li>
                                     <ul>
                                         <li>Android App</li>
@@ -96,8 +64,8 @@ class Home extends Component {
                             </ul>
                             <div className="color-box"></div>
                         </li>
-                        <li>
-                            <ul className="container">
+                        <li data-delighter="start:0.25">
+                            <ul className="container" data-delighter>
                                 <li>
                                     <ul>
                                         <li>Android App</li>
