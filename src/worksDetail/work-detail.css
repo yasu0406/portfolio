@@ -1,0 +1,10 @@
+/*
+ work-detail.css
+*/
+/*********--work-detail--***********/
+.work-detail > ul {
+    display: flex;
+}
+.work-detail > ul > li {
+    width: 50%;
+}
