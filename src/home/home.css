@@ -2,59 +2,58 @@
  home.css
 */
 /*********--Home--***********/
-.main-visual {
+.home .main-visual {
     height: 100vh;
     display: flex;
 }
-.main-visual .left {
+.home .main-visual .left {
     width: 50%;
     display: flex;
+    align-items: center;
     justify-content: center;
     background-color: #1b2fce;
+    position: relative;
 }
-.main-visual .left div {
-    align-self: center;
-}
-.main-visual .right {
+.home .main-visual .right {
     width: 50%;
     background-color: #ff000085;
 }
-section > ul {
+.home section + section > ul {
     position: relative;
 }
-section ul .color-box {
+.home section + section ul .color-box {
     width: 50%;
     height: 100vh;
     position: absolute;
     z-index: -1;
 }
-section > ul > li:nth-child(even) .color-box {
+.home section + section > ul > li:nth-child(even) .color-box {
     right: 0;
     background-color: #DCB000;
 }
-section > ul > li:nth-child(odd) .color-box {
+.home section + section > ul > li:nth-child(odd) .color-box {
     left: 0;
     background-color: #00CCB3;
 }
-section > ul > li {
+.home section + section > ul > li {
     height: 100vh;
     display: flex;
 }
-section > ul > li > ul {
+.home section + section > ul > li > ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-section > ul > li > ul > li {
+.home section + section > ul > li > ul > li {
     width: 100%;
 }
-section > ul > li > ul > li .btn {
+.home section + section > ul > li > ul > li .btn {
     margin-top: 30px;
 }
-section > ul > li > ul > li:nth-child(2) {
+.home section + section > ul > li > ul > li:nth-child(2) {
     margin: 0 40px;
     text-align: center;
 }
-section > ul > li > ul > li img {
+.home section + section > ul > li > ul > li img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
