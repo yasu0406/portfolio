@@ -1,0 +1,62 @@
+/*
+ works.scss
+*/
+/*********--works--***********/
+.works {
+  > ul {
+    display: flex;
+    overflow-x: scroll;
+  }
+  > ul > li {
+    width: 100%;
+    min-width: 300px;
+  }
+  > ul > li a {
+    display: block;
+  }
+  > ul > li a li {
+    height: 50vh;
+  }
+  > ul > li:nth-child(even) li:first-child {
+    background: url('/img/img-tm-works.png') no-repeat;
+  }
+  > ul > li:nth-child(odd) li:last-child {
+    background: url('/img/img-tm-works.png') no-repeat;
+  }
+  > ul > li:nth-child(even) li:first-child,
+  > ul > li:nth-child(odd) li:last-child {
+    background-size: cover;
+  }
+  > ul > li:nth-child(even) li,
+  > ul > li:nth-child(odd) li {
+    position: relative;
+  }
+  > ul > li li h2 {
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 4.4rem;
+  }
+  > ul > li li h2 span {
+    padding-top: 40px;
+    position: relative;
+    display: block;
+  }
+  > ul > li li h2 span:before {
+    content: '';
+    width: 1px;
+    height: 25px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 18px;
+    background-color: #fff;
+  }
+
+}
