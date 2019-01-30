@@ -1,5 +1,5 @@
 /*
- about.css
+ about.scss
 */
 /*********--about--***********/
 .about {
@@ -14,33 +14,32 @@
     display: flex;
     align-items: center;
   }
+  .left {
+    div {
+      width: 60%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
   .right {
     padding: 0 50px;
     overflow-y: scroll;
     background-color: #000067;
-  }
-  .left div {
-    width: 60%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  > ul > li > div h2 {
-    margin-bottom: 20px;
-  }
-  > ul > li > div > ul {
-    display: flex;
-  }
-  > ul > li > div > ul li:first-child {
-    margin-right: 150px;
-  }
-  > ul > li > div > ul dl dt {
-    margin: 50px 0 20px;
-    font-size: 2.8rem;
-  }
-  > ul > li > div > ul dl dd {
-    font-size: 1.8rem;
+    h2 {
+      margin-bottom: 20px;
+    }
+    div > ul {
+      display: flex;
+    }
+    div > ul li:first-child {
+      margin-right: 140px;
+    }
+    div > ul dl dt {
+      margin: 50px 0 20px;
+      font-size: 2.8rem;
+    }
+    div > ul dl dd {
+      font-size: 1.8rem;
+    }
   }
 }
-
-
-
