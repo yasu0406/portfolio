@@ -2,92 +2,36 @@ import React, { Component } from "react";
 import {
     NavLink,
 } from "react-router-dom";
-import './works.css';
+import './works.scss';
+import delighters from "../common/delighters";
 
 class Works extends Component {
+    componentDidMount() {
+        delighters.init();
+    }
     render() {
         return (
-            <div className="works">
+            <div className="works container">
                 <ul>
                     <li>
-                        <NavLink to="/worksDetail">
-                            <ul>
-                                <li><h2><span>Android</span>ProjectName</h2></li>
-                                <li></li>
-                            </ul>
-                        </NavLink>
+                        <h2>01</h2>
+                        <NavLink to="/worksDetail"><img src="/img/thumnail-works-01.png" alt=""/></NavLink>
                     </li>
                     <li>
-                        <NavLink to="/worksDetail">
-                            <ul>
-                                <li></li>
-                                <li><h2><span>Android</span>ProjectName</h2></li>
-                            </ul>
-                        </NavLink>
+                        <h2>02</h2>
+                        <NavLink to="/worksDetail"><img src="/img/thumnail-works-01.png" alt=""/></NavLink>
                     </li>
                     <li>
-                        <NavLink to="/worksDetail">
-                            <ul>
-                                <li><h2><span>Android</span>ProjectName</h2></li>
-                                <li></li>
-                            </ul>
-                        </NavLink>
+                        <h2>03</h2>
+                        <NavLink to="/worksDetail"><img src="/img/thumnail-works-01.png" alt=""/></NavLink>
                     </li>
                     <li>
-                        <NavLink to="/worksDetail">
-                            <ul>
-                                <li></li>
-                                <li><h2><span>Android</span>ProjectName</h2></li>
-                            </ul>
-                        </NavLink>
+                        <h2>04</h2>
+                        <NavLink to="/worksDetail"><img src="/img/thumnail-works-01.png" alt=""/></NavLink>
                     </li>
                     <li>
-                        <NavLink to="/worksDetail">
-                            <ul>
-                                <li><h2><span>Android</span>ProjectName</h2></li>
-                                <li></li>
-                            </ul>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/worksDetail">
-                            <ul>
-                                <li></li>
-                                <li><h2><span>Android</span>ProjectName</h2></li>
-                            </ul>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/worksDetail">
-                            <ul>
-                                <li><h2><span>Android</span>ProjectName</h2></li>
-                                <li></li>
-                            </ul>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/worksDetail">
-                            <ul>
-                                <li></li>
-                                <li><h2><span>Android</span>ProjectName</h2></li>
-                            </ul>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/worksDetail">
-                            <ul>
-                                <li><h2><span>Android</span>ProjectName</h2></li>
-                                <li></li>
-                            </ul>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/worksDetail">
-                            <ul>
-                                <li></li>
-                                <li><h2><span>Android</span>ProjectName</h2></li>
-                            </ul>
-                        </NavLink>
+                        <h2>05</h2>
+                        <NavLink to="/worksDetail"><img src="/img/thumnail-works-01.png" alt=""/></NavLink>
                     </li>
                 </ul>
             </div>
