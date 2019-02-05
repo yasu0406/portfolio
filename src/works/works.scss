@@ -3,60 +3,31 @@
 */
 /*********--works--***********/
 .works {
-  > ul {
+  ul {
+    margin-top: 100px;
     display: flex;
-    overflow-x: scroll;
+    flex-wrap: wrap;
   }
-  > ul > li {
-    width: 100%;
-    min-width: 300px;
+  li {
+    width: calc(25% - 20px);
+    margin-right: 20px;
+    margin-bottom: 100px;
   }
-  > ul > li a {
-    display: block;
+  li:last-child {
+    margin-right: 0;
   }
-  > ul > li a li {
-    height: 50vh;
-  }
-  > ul > li:nth-child(even) li:first-child {
-    background: url('/img/img-tm-works.png') no-repeat;
-  }
-  > ul > li:nth-child(odd) li:last-child {
-    background: url('/img/img-tm-works.png') no-repeat;
-  }
-  > ul > li:nth-child(even) li:first-child,
-  > ul > li:nth-child(odd) li:last-child {
-    background-size: cover;
-  }
-  > ul > li:nth-child(even) li,
-  > ul > li:nth-child(odd) li {
+  h2 {
+    text-align: center;
     position: relative;
+    z-index: 1;
   }
-  > ul > li li h2 {
-    -webkit-writing-mode: vertical-rl;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    font-size: 4.4rem;
-  }
-  > ul > li li h2 span {
-    padding-top: 40px;
-    position: relative;
+  a {
+    margin-top: -35px;
     display: block;
   }
-  > ul > li li h2 span:before {
-    content: '';
-    width: 1px;
-    height: 25px;
-    display: block;
-    position: absolute;
-    top: 5px;
-    left: 18px;
-    background-color: #fff;
+  @media screen and (max-width:1024px) {
+    li {
+      width: calc(50% - 20px);
+    }
   }
-
 }
