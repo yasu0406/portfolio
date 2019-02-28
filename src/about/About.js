@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import './about.scss'
 import delighters from "../common/delighters";
 import ReactFullpage from "@fullpage/react-fullpage";
 import {NavLink} from "react-router-dom";
@@ -14,30 +13,21 @@ class About extends Component {
                 render={() => {
                     return (
                         <ReactFullpage.Wrapper>
-                        <section className="about">
-                            <section className="my-name section container section">
+                        <div className="about">
+                            <section className="my-name section container">
                                 <div className="left">
-                                    <h1>Yasuhiro<span className="sp-line-break">Katayama.</span><span className="line-break">Front End developer.</span></h1>
+                                    <h1>Yasuhiro<span className="sp-line-break title-span">Katayama.</span><span className="line-break">Front End developer.</span></h1>
                                 </div>
                                 <div className="right">
                                     <img src="/img/img-profile.png" alt=""/>
                                 </div>
                             </section>
 
-                            <section className="about-me section">
+                            <section className="skill section">
                                 <div className="container">
                                     <div>
                                         <div className="left">
-                                            <h2>I am a…</h2>
-                                        </div>
-                                        <div className="right">
-                                            <p>I am currently studying at Cornerstone International Community College of Canada (CICCC) for Web and Mobile Development program.
-                    In Japan, I worked as a frontend engineer for two years and backend engineer for one year and 6 months. I am looking for work experience in Canada so I would be happy just to work as an intern or volunteer. I love programming and would like to learn new skills.</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="left">
-                                            <h2>My skills</h2>
+                                            <h2>Skills</h2>
                                         </div>
                                         <div className="right">
                                             <ul>
@@ -64,17 +54,46 @@ class About extends Component {
                                             </ul>
                                         </div>
                                     </div>
+                                    <div>
+                                        <div className="left">
+                                            <h2>Policy</h2>
+                                        </div>
+                                        <div className="right">
+                                            <p>I am currently studying at Cornerstone International Community College of Canada (CICCC) for Web and Mobile Development program.
+                                                In Japan, I worked as a frontend engineer for two years and backend engineer for one year and 6 months. I am working volunteer at the web company and a freelance job.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </section>
-                            <section className="container section">
-                                <div className="left">
-                                    <h2>Discography</h2>
-                                </div>
-                                <div className="right">
-
+                            <section className="about-me section">
+                                <div className="container">
+                                    <div>
+                                        <div className="left">
+                                            <h2>I am a…</h2>
+                                        </div>
+                                        <div className="right">
+                                            <p>I am currently studying at Cornerstone International Community College of Canada (CICCC) for Web and Mobile Development program.
+                                                In Japan, I worked as a frontend engineer for two years and backend engineer for one year and 6 months. I am working volunteer at the web company and a freelance job.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="left">
+                                            <h2>Discography</h2>
+                                        </div>
+                                        <div className="right">
+                                            <dl>
+                                                <dt>2016-2017</dt>
+                                                <dd>AGENTGROW Inc in Tokyo</dd>
+                                                <dt>2015-2016</dt>
+                                                <dd>PENSEUR Inc in Osaka</dd>
+                                                <dt>2014-2015</dt>
+                                                <dd>MITELI Ltd in Osaka</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
                                 </div>
                             </section>
-                        </section>
+                        </div>
                         </ReactFullpage.Wrapper>
                     );
                 }}
