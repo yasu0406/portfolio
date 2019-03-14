@@ -25,27 +25,29 @@ class Navigation extends Component {
             openNav += 'open';
         }
         return (
-            <div onClick={this.remove.bind(this)}>
-                <div className={activeNav} id="toggle" onClick={this.toggle.bind(this)}>
-                    <span className="top"></span>
-                    <span className="middle"></span>
-                    <span className="bottom"></span>
+            <div>
+                <div className="sns">
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/yasuhiro-katayama-118423160/" target="_blank" className="fa fa-linkedin"></a></li>
+                        <li><a href="https://github.com/yasu0406" target="_blank" className="fa fa-github"></a></li>
+                        <li><a href="https://www.facebook.com/yasuhiro.katayama2" target="_blank" className="fa fa-facebook"></a></li>
+                    </ul>
                 </div>
-                <div className={openNav} id="overlay">
-                    <nav className="overlay-menu">
-                        <ul>
-                            <li><NavLink to="/">Home</NavLink></li>
-                            <li><NavLink to="/about">About</NavLink></li>
-                            <li><NavLink to="/works">Works</NavLink></li>
-                            <li>
-                                <ul className="sns">
-                                    <li><a href="https://www.linkedin.com/in/yasuhiro-katayama-118423160/" target="_blank" className="fa fa-linkedin"></a></li>
-                                    <li><a href="https://github.com/yasu0406" target="_blank" className="fa fa-github"></a></li>
-                                    <li><a href="https://www.facebook.com/yasuhiro.katayama2" target="_blank" className="fa fa-facebook"></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                <div onClick={this.remove.bind(this)}>
+                    <div className={activeNav} id="toggle" onClick={this.toggle.bind(this)}>
+                        <span className="top"></span>
+                        <span className="middle"></span>
+                        <span className="bottom"></span>
+                    </div>
+                    <div className={openNav} id="overlay">
+                        <nav className="overlay-menu">
+                            <ul>
+                                <li><NavLink to="/">Home</NavLink></li>
+                                <li><NavLink to="/about">About</NavLink></li>
+                                <li><NavLink to="/works">Works</NavLink></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         );
