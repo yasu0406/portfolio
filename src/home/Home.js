@@ -6,7 +6,7 @@ import {
 import delighters from '../common/delighters';
 
 
-class Home extends React.Component {
+class Home extends Component {
     componentDidMount() {
         delighters.init();
     }
@@ -14,9 +14,9 @@ class Home extends React.Component {
         return (
                 <div className="home">
                     <section>
-                        <ul className="main-visual demo" data-delighter>
+                        <ul className="main-visual">
                             <li className="left">
-                                <ul>
+                                <ul className="demo" data-delighter>
                                     <li><h1>Hello, I’m Yasuhiro.</h1></li>
                                     <li><p>Front End developer.</p></li>
                                 </ul>
@@ -24,23 +24,25 @@ class Home extends React.Component {
                         </ul>
                     </section>
                     <section className="work-box">
-                        <div className="left" data-delighter>
+                        <div className="left">
                             <NavLink to="/worksDetail"><img src="/img/img-works-01.png" alt=""/></NavLink>
+                            <div className="blue" data-delighter></div>
                         </div>
                         <ul className="demo" data-delighter>
                             <li><h2><NavLink to="/worksDetail">METAL REVISION.INC</NavLink></h2></li>
                             <li>Freelance job / Website</li>
-                            <li><NavLink to="/worksDetail">View →</NavLink></li>
+                            <li><NavLink className="btn" to="/worksDetail">Detail →</NavLink></li>
                         </ul>
                     </section>
                     <section className="work-box">
-                        <div className="left" data-delighter>
+                        <div className="left">
                             <NavLink to="/worksDetail"><img src="/img/img-works-02.png" alt=""/></NavLink>
+                            <div className="blue" data-delighter></div>
                         </div>
                         <ul data-delighter>
                             <li><h2><NavLink to="/worksDetail">METAL REVISION.INC</NavLink></h2></li>
                             <li>Freelance job / Website</li>
-                            <li><NavLink to="/worksDetail">View →</NavLink></li>
+                            <li><NavLink className="btn" to="/worksDetail">Detail →</NavLink></li>
                         </ul>
                     </section>
                 </div>
