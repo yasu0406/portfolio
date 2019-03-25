@@ -27,7 +27,7 @@ class About extends Component {
                                 <div className="right">
                                     <ul>
                                         <li>
-                                            <ul data-delighter>
+                                            <ul className="fade-up-in" data-delighter>
                                                 <li><h3>Programing</h3></li>
                                                 <li>- Javascript</li>
                                                 <li>- React & React Native</li>
@@ -38,7 +38,7 @@ class About extends Component {
                                             </ul>
                                         </li>
                                         <li>
-                                            <ul data-delighter>
+                                            <ul className="fade-up-in" data-delighter>
                                                 <li><h3>Design</h3></li>
                                                 <li>- Sketch</li>
                                                 <li>- XD</li>
@@ -78,16 +78,23 @@ class About extends Component {
                                 <div className="right">
                                     <dl data-delighter>
                                         <dt className="fade-up">2016-2017</dt>
-                                        <dd className="fade-up">AGENTGROW Inc in Tokyo<a href="https://www.agent-grow.com/"></a></dd>
+                                        <dd className="fade-up"><a className="square-btn" href="https://www.agent-grow.com/" target="_blank">AGENTGROW Inc in Tokyo</a></dd>
                                         <dt className="fade-up">2015-2016</dt>
-                                        <dd className="fade-up">PENSEUR Inc in Osaka<a href="https://www.penseur.co.jp/"></a></dd>
+                                        <dd className="fade-up"><a className="square-btn" href="https://www.agent-grow.com/" target="_blank">PENSEUR Inc in Osaka</a></dd>
                                         <dt className="fade-up">2014-2015</dt>
-                                        <dd className="fade-up">MITELI Ltd in Osaka<a href="http://www.miteli.co.jp/"></a></dd>
+                                        <dd className="fade-up"><a className="square-btn" href="https://www.agent-grow.com/" target="_blank">MITELI Ltd in Osaka</a></dd>
                                     </dl>
                                 </div>
                             </div>
                         </div>
                     </section>
+                    <ul className="load-overlay" data-delighter>
+                        <li className="fade-out-up"></li>
+                        <li className="fade-out-up"></li>
+                        <li className="fade-out-up"></li>
+                        <li className="fade-out-up"></li>
+                        <li className="fade-out-up"></li>
+                    </ul>
                 </div>
         );
     }
