@@ -17,6 +17,11 @@
         font-size: 5rem;
         color: $green;
       }
+      @media screen and (max-width: 468px){
+        p {
+          font-size: 3rem;
+        }
+      }
     }
   }
   .work-box {
@@ -24,6 +29,7 @@
     position: relative;
     text-align: center;
     > div {
+      width: 50%;
       height: 560px;
       margin: auto;
       position: absolute;
@@ -32,7 +38,6 @@
       right: 0;
       bottom: 0;
       a {
-        width: 50%;
         display: inline-block;
       }
     }
@@ -257,6 +262,9 @@
       margin-bottom: 100px;
       position: relative;
       text-align: center;
+      > div {
+        position: relative;
+      }
       h2 {
         margin-top: 20px;
       }
@@ -320,6 +328,9 @@
             display: flex;
             justify-content: space-between;
             flex-direction: row-reverse;
+            li {
+              font-size: 1.6rem;
+            }
           }
           > ul > li:first-child {
             width: calc(81.9672131% - 20px);
@@ -328,7 +339,6 @@
           > ul > li:last-child {
             > ul > li {
               margin-bottom: 30px;
-              font-size: 1.6rem;
             }
             > ul > li > ul li{
               margin-bottom: 10px;
