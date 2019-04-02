@@ -4,20 +4,22 @@
 /*********--CommonParts--***********/
 $mainColor:#1b2fce;
 $btnColor:#0068E2;
-$textWhite:#fff;
-$bgWhite:#fff;
-$bgBlue:#151c65;
+$bgNavy:#151c65;
+$fontGray:#707070;
+$green:#15DB95;
 body {
   background-color: $mainColor;
   word-break:break-all;
   overflow-x: hidden;
   font-weight: 200;
-  line-height: 1.4;
   letter-spacing: 0.2rem;
   color: $mainColor;
+  line-height: 1;
 }
-h1 {
-  font-size: 7rem;
+h1,
+h1 .sp-line-break,
+.title-span {
+  font-size: 6rem;
 }
 h2 {
   font-size: 5rem;
@@ -28,22 +30,35 @@ h3 {
 h4 {
   font-size: 2.5rem;
 }
-h1, h2, h3, h4, dt {
+h1, h2, h3, h4, dt, .title-span, h1 .sp-line-break {
   font-weight: 900;
   text-shadow: 2px 2px rgba(19, 25, 99, 0.4196078431372549);
 }
+@media screen and (max-width: 1024px){
+  h2 {
+    font-size: 3.5rem!important;
+  }
+}
+@media screen and (max-width: 468px){
+  h1,
+  h1 .sp-line-break{
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem!important;
+  }
+}
 p,li {
   font-size: 1.8rem;
+}
+p {
+  line-height: 1.6;
 }
 .container {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-}
-@media screen and (max-width: 1024px){
-  .container {
-    padding: 0 15px;
-  }
+  padding: 0 30px;
 }
 .btn {
   max-width: 180px;
@@ -51,24 +66,67 @@ p,li {
   padding: 10px 0;
   display: block;
   text-align: center;
-  color: $textWhite;
+  color: $green;
   font-size: 1.8rem;
-  background-color: $btnColor;
-  border: 2px solid $btnColor;
+  border: 1px solid $green;
   transition: .5s;
 }
 .btn:hover {
-  background: $bgWhite;
-  color: $btnColor;
-  border: 2px solid $btnColor;
+  background: $green;
+  color: white;
+  border: 2px solid $green;
 }
+.square-btn {
+  position: relative;
+  &:hover:before {
+    transform: rotateZ( 360deg );
+  }
+}
+.square-btn:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+  background: $green;
+  display: inline-block;
+  position: absolute;
+  right: -15px;
+  transition: 0.5s;
+  transform: rotateZ( 0deg );
+}
+.line-break {
+  display: block;
+}
+.pop-up {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1.5s;
+  background: rgba(27, 47, 206, 0.61);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pop-up:hover {
+  opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .sp-line-break {
+    display: block;
+  }
+} 
 /* Navigation */
 .button_container {
-  position: fixed;
-  top: 5%;
-  right: 2%;
-  height: 27px;
   width: 35px;
+  height: 27px;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  right: 2%;
+  bottom: 0;
   cursor: pointer;
   z-index: 100;
   transition: opacity 0.25s ease;
@@ -80,22 +138,22 @@ p,li {
   .top {
     -webkit-transform: translateY(11px) translateX(0) rotate(45deg);
     transform: translateY(11px) translateX(0) rotate(45deg);
-    background: $bgWhite;
+    background: white;
   }
   .middle {
     opacity: 0;
-    background: $bgWhite;
+    background: white;
   }
   .bottom {
     -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
     transform: translateY(-11px) translateX(0) rotate(-45deg);
-    background: $bgWhite;
+    background: white;
   }
 } 
 
 .button_container {
   span {
-    background: $bgWhite;
+    background: white;
     border: none;
     height: 5px;
     width: 100%;
@@ -114,7 +172,7 @@ p,li {
 } 
 .overlay {
   position: fixed;
-  background: $bgBlue;
+  background: $bgNavy;
   top: 0;
   left: 0;
   width: 100%;
@@ -123,6 +181,7 @@ p,li {
   visibility: hidden;
   transition: opacity 0.35s, visibility 0.35s, height 0.35s;
   overflow: hidden;
+  z-index: 99999;
   nav {
     position: relative;
     height: 70%;
@@ -142,8 +201,7 @@ p,li {
   }
   nav > ul > li {
     display: block;
-    height: 25%;
-    height: calc(100% / 4);
+    height: calc(100% / 3);
     min-height: 50px;
     position: relative;
     opacity: 0;
@@ -151,7 +209,7 @@ p,li {
   nav > ul > li > a {
     display: block;
     position: relative;
-    color: $textWhite;
+    color: white;
     text-decoration: none;
     overflow: hidden;
     font-size: 5.0rem;
@@ -170,7 +228,7 @@ p,li {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     height: 3px;
-    background: $bgWhite;
+    background: white;
     transition: 0.35s;
   }
   nav ul.sns {
@@ -224,8 +282,11 @@ p,li {
 }
 
 /* SNS */
-ul.sns {
-  display: flex;
+.sns {
+  position: fixed;
+  top: 0;
+  right: 2%;
+  z-index: 100;
 }
 .fa {
   width: 40px;
@@ -237,16 +298,29 @@ ul.sns {
   border-radius: 100%;
 }
 .fa-facebook {
-  background: #3B5998;
   color: white;
 }
 .fa-linkedin {
-  background: #007bb5;
   color: white;
-}
-.fa-github {
-  background: #000000;
 }
 .fa:hover {
   opacity: 0.7;
+}
+.load-overlay {
+  width: 100%;
+  height: 100%;
+  margin-top: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+.delighter.started.load-overlay {
+  visibility: hidden;
+}
+@media screen and (max-width: 1024px) {
+  .load-overlay,
+  .load-overlay li{
+    display: none;
+  }
 }
