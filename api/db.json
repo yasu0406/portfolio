@@ -1,0 +1,43 @@
+{
+  "works": [
+    {
+      "title": "METAL REVISION.INC",
+      "description": "This is a great stream",
+      "thumbnail": "img-works-01.png",
+      "imgDetailFirst": "work-detail-sample.jpg",
+      "imgDetailSecond": "work-detail-mobile.png",
+      "typeOfJob": "Freelance",
+      "category": "Web",
+      "date": "Jun 2018",
+      "skills": "HTML CSS Javascript WordPress",
+      "projectUrl": "https://www.agent-grow.com/",
+      "id": 1
+    },
+    {
+      "title": "METAL REVISION.INC",
+      "description": "This is a great stream",
+      "thumbnail": "img-works-02.png",
+      "imgDetailFirst": "work-detail-sample.jpg",
+      "imgDetailSecond": "work-detail-mobile.png",
+      "typeOfJob": "Freelance",
+      "category": "Web",
+      "date": "Jun 2018",
+      "skills": "HTML CSS Javascript WordPress",
+      "projectUrl": "https://www.agent-grow.com/",
+      "id": 2
+    },
+    {
+      "title": "CHAPITER DEUX",
+      "description": "This is a great stream",
+      "thumbnail": "img-works-03.png",
+      "imgDetailFirst": "work-detail-sample.jpg",
+      "imgDetailSecond": "work-detail-mobile.png",
+      "typeOfJob": "Freelance",
+      "category": "Web",
+      "date": "Jun 2018",
+      "skills": "HTML CSS Javascript WordPress",
+      "projectUrl": "https://www.agent-grow.com/",
+      "id": 3
+    }
+  ]
+}
