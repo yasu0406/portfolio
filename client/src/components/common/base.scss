@@ -392,10 +392,33 @@
   }
   .fourth-content {
     height: 100vh;
-    padding: 50px 0;
     background-color: $bgNavy;
     .scale-up {
       width: 0;
+    }
+  }
+  .next-project {
+    padding: 50px 80px 50px 0;
+    text-align: right;
+    background-color: $green;
+    h2 a {
+      display: block;
+      transition: 0.5s;
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+  .all-project {
+    padding: 150px 0 50px;
+    h2 {
+      margin-bottom: 50px;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-column-gap: 50px;
+      grid-row-gap: 50px;
     }
   }
 }
