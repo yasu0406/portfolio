@@ -13,7 +13,13 @@ import './common/delighter.css';
 import Home from "./home/Home";
 import About from "./about/About";
 import Works from "./works/Works";
+import delighters from "./common/delighters";
+
 class Main extends Component {
+    componentDidMount() {
+        delighters.init();
+    }
+
     render() {
         return (
             <BrowserRouter>
