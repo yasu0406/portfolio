@@ -18,9 +18,6 @@ class Home extends Component {
 
     renderList () {
         return this.props.works.map((work, index)  => {
-            if (index > 3) {
-                console.log("test");
-            }
             return (
                 <>
                     <section className="work-box" key={index}>
