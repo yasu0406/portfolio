@@ -11,7 +11,6 @@
       justify-content: center;
       background-color: $mainColor;
       position: relative;
-      overflow: hidden;
       p {
         font-weight: 900;
         font-size: 5rem;
@@ -22,6 +21,9 @@
           font-size: 3rem;
         }
       }
+    }
+    @media screen and (max-width: 1024px){
+      height: 50vh;
     }
   }
   .work-box {
@@ -37,15 +39,20 @@
       left: 0;
       right: 0;
       bottom: 0;
+      overflow: hidden;
       > div {
         position: relative;
       }
       a {
         display: inline-block;
+        img {
+          width: auto;
+          max-height: 560px;
+        }
       }
     }
     ul {
-      height: 4.8rem;
+      height: 170px;
       margin: auto;
       position: absolute;
       top: 0;
@@ -87,12 +94,19 @@
       font-weight: 700;
     }
     @media screen and (max-width:1024px) {
+      height: auto;
+      margin-bottom: 120px;
       > div {
+        width: 100%;
         height: auto;
         position: relative;
-        a {
+        > div a {
           width: 90%;
-          display: inline-block;
+          img {
+            width: 100%;
+            height: auto;
+            max-height: unset;
+          }
         }
       }
       > ul {
@@ -115,14 +129,16 @@
           display: inline-block;
         }
       }
-      > ul {
-        margin: 30px 0 0 20px;
-      }
       ul + div > a {
         width: 70%;
       }
       h2 {
         font-size: 4rem;
+      }
+    }
+    @media screen and (max-width: 468px) {
+      > ul {
+        margin: 30px 0 0 20px;
       }
     }
   }
@@ -337,12 +353,15 @@
             }
           }
           > ul > li:first-child {
-            width: calc(81.9672131% - 20px);
+            width: calc(80% - 20px);
             margin-left: 20px;
           }
           > ul > li:last-child {
             > ul > li {
               margin-bottom: 30px;
+            }
+            > ul > li:last-child {
+              margin-top: 50px;
             }
             > ul > li > ul li{
               margin-bottom: 10px;
