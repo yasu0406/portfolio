@@ -45,6 +45,9 @@ p, li {
 p {
   line-height: 1.6; }
 
+#root {
+  overflow: hidden; }
+
 .container {
   max-width: 1280px;
   width: 100%;
@@ -292,8 +295,7 @@ p {
     align-items: center;
     justify-content: center;
     background-color: #1b2fce;
-    position: relative;
-    overflow: hidden; }
+    position: relative; }
     .home .main-visual .left p {
       font-weight: 900;
       font-size: 5rem;
@@ -301,6 +303,9 @@ p {
     @media screen and (max-width: 468px) {
       .home .main-visual .left p {
         font-size: 3rem; } }
+  @media screen and (max-width: 1024px) {
+    .home .main-visual {
+      height: 50vh; } }
 .home .work-box {
   height: 100vh;
   position: relative;
@@ -313,13 +318,17 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0; }
+    bottom: 0;
+    overflow: hidden; }
     .home .work-box > div > div {
       position: relative; }
     .home .work-box > div a {
       display: inline-block; }
+      .home .work-box > div a img {
+        width: auto;
+        max-height: 560px; }
   .home .work-box ul {
-    height: 4.8rem;
+    height: 170px;
     margin: auto;
     position: absolute;
     top: 0;
@@ -353,19 +362,26 @@ p {
     text-align: left;
     font-weight: 700; }
   @media screen and (max-width: 1024px) {
-    .home .work-box > div {
+    .home .work-box {
       height: auto;
-      position: relative; }
-      .home .work-box > div a {
-        width: 90%;
-        display: inline-block; }
-    .home .work-box > ul {
-      position: unset;
-      margin: 30px 0 0 50px; }
-    .home .work-box ul + div > a {
-      width: 70%; }
-    .home .work-box h2 {
-      font-size: 4rem; } }
+      margin-bottom: 120px; }
+      .home .work-box > div {
+        width: 100%;
+        height: auto;
+        position: relative; }
+        .home .work-box > div > div a {
+          width: 90%; }
+          .home .work-box > div > div a img {
+            width: 100%;
+            height: auto;
+            max-height: unset; }
+      .home .work-box > ul {
+        position: unset;
+        margin: 30px 0 0 50px; }
+      .home .work-box ul + div > a {
+        width: 70%; }
+      .home .work-box h2 {
+        font-size: 4rem; } }
   @media screen and (max-width: 768px) {
     .home .work-box > div {
       height: auto;
@@ -373,12 +389,13 @@ p {
       .home .work-box > div a {
         width: 90%;
         display: inline-block; }
-    .home .work-box > ul {
-      margin: 30px 0 0 20px; }
     .home .work-box ul + div > a {
       width: 70%; }
     .home .work-box h2 {
       font-size: 4rem; } }
+  @media screen and (max-width: 468px) {
+    .home .work-box > ul {
+      margin: 30px 0 0 20px; } }
 
 /*********--about--***********/
 .about h2 {
@@ -532,10 +549,12 @@ p {
     .work-detail .second-content .container > ul li {
       font-size: 1.6rem; }
   .work-detail .second-content .container > ul > li:first-child {
-    width: calc(81.9672131% - 20px);
+    width: calc(80% - 20px);
     margin-left: 20px; }
   .work-detail .second-content .container > ul > li:last-child > ul > li {
     margin-bottom: 30px; }
+  .work-detail .second-content .container > ul > li:last-child > ul > li:last-child {
+    margin-top: 50px; }
   .work-detail .second-content .container > ul > li:last-child > ul > li > ul li {
     margin-bottom: 10px; }
   @media screen and (max-width: 768px) {
