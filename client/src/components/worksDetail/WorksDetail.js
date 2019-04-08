@@ -14,11 +14,17 @@ class WorksDetail extends Component {
         );
     }
 
+    renderSkills(skillWord) {
+        return skillWord.map((skill) => {
+            return <li>{skill}</li>
+        })
+    }
     render() {
         if (!this.props.work) {
             return <div>Loading...</div>
         }
-        const { title, description, thumbnail, date, category, skills, projectUrl, imgDetailFirst, imgDetailSecond } = this.props.work
+        const { title, description, thumbnail, date, category, skills, projectUrl, imgDetailFirst, imgDetailSecond } = this.props.work;
+        var skillWord = skills.split(',');
         return (
             <div className="work-detail">
                 <section className="first-content">
@@ -34,9 +40,11 @@ class WorksDetail extends Component {
                                     <li>Date - {date}</li>
                                     <li>Category - {category}</li>
                                     <li>
-                                        {skills}
+                                        <ul>
+                                            {this.renderSkills(skillWord)}
+                                        </ul>
                                     </li>
-                                    <li><a className="square-btn" href={projectUrl} target="_blank">View</a></li>
+                                    <li><a className="btn" href={projectUrl} target="_blank">View</a></li>
                                 </ul>
                             </li>
                         </ul>
