@@ -38,8 +38,10 @@ class WorksDetail extends Component {
         if(this.props.works.length != this.props.match.params.id) {
             return (
                 <>
-                    <section className="next-project">
-                        <h2><Link onClick={this.handler} to={`/works-detail/${this.state.nextId}`}>Next Project</Link></h2>
+                    <section className="next-project box" data-delighter>
+                        <div className="box" data-delighter>
+                            <h2><Link onClick={this.handler} to={`/works-detail/${this.state.nextId}`}>Next Project</Link></h2>
+                        </div>
                     </section>
                 </>
             )
@@ -103,11 +105,11 @@ class WorksDetail extends Component {
                         <img src={`/img/${imgDetailSecond}`} alt={title} />
                     </div>
                 </section>
-                <section>
-                    {this.renderNext()}
-                </section>
+                {this.renderNext()}
                 <section className="all-project container">
-                    <h2>All Project</h2>
+                    <div data-delighter>
+                        <h2 className="fade-up">All Project</h2>
+                    </div>
                     <ul key={id}>
                         {this.renderList()}
                     </ul>
