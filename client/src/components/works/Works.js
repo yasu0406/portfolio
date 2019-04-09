@@ -24,10 +24,10 @@ class Works extends Component {
                             <div>
                                 <Link to={`/works-detail/${work.id}`}><img src={`/img/${work.thumbnail}`} alt={work.title}/></Link>
                                 <div className="pop-up"><h3><Link to={`/works-detail/${work.id}`}>View</Link></h3></div>
+                                <div className="blue" data-delighter></div>
                             </div>
                             <h2 className="fade-up"><Link to={`/works-detail/${work.id}`}>{work.title}</Link></h2>
                             <p className="fade-up">{`${work.typeOfJob} / ${work.category}`}</p>
-                            <div className="blue" data-delighter></div>
                         </li>
                     </>
                 )
