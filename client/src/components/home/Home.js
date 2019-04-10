@@ -20,7 +20,7 @@ class Home extends Component {
         return this.props.works.map((work, index)  => {
             return (
                 <>
-                    <section className="work-box" key={index}>
+                    <section className="work-box container" key={index}>
                         <div>
                             <div>
                                 <Link to={`/works-detail/${work.id}`}><img src={`/img/${work.thumbnail}`} alt={work.title}/></Link>
