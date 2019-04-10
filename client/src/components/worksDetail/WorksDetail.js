@@ -49,25 +49,41 @@ class WorksDetail extends Component {
     }
     renderList() {
         return this.props.works.map((work)  => {
+            if(work.id != this.props.match.params.id) {
+                return (
+                    <>
+                        <li key={work.id}>
+                            <div data-delighter>
+                                <Link to={`/works-detail/${work.id}`}><img src={`/img/${work.thumbnail}`} alt={work.title}/></Link>
+                                <div className="pop-up"><h3><Link onClick={this.handler}  to={`/works-detail/${work.id}`}>View</Link></h3></div>
+                            </div>
+                            <div className="blue" data-delighter></div>
+                        </li>
+                    </>
+                )
+            }
+        })
+    }
+
+    renderFourth(imgDetailSecond, title) {
+        if (!imgDetailSecond) {
             return (
                 <>
-                    <li key={work.id} data-delighter>
-                        <div>
-                            <Link to={`/works-detail/${work.id}`}><img src={`/img/${work.thumbnail}`} alt={work.title}/></Link>
-                            <div className="pop-up"><h3><Link onClick={this.handler}  to={`/works-detail/${work.id}`}>View</Link></h3></div>
+                    <section className="fourth-content">
+                        <div className="container scale-up" data-delighter>
+                            <img src={`/img/${imgDetailSecond}`} alt={title} />
                         </div>
-                        <div className="blue" data-delighter></div>
-                    </li>
+                    </section>
                 </>
             )
-        })
+        }
     }
     render() {
         if (!this.props.work) {
             return <div>Loading...</div>
         }
         const {id, title, description, thumbnail, date, category, skills, projectUrl, imgDetailFirst, imgDetailSecond } = this.props.work;
-        var skillWord = skills.split(',');
+        let skillWord = skills.split(',');
         return (
             <div className="work-detail">
                 <section className="first-content">
@@ -100,11 +116,7 @@ class WorksDetail extends Component {
                         <div className="blue" data-delighter></div>
                     </div>
                 </section>
-                <section className="fourth-content">
-                    <div className="container scale-up" data-delighter>
-                        <img src={`/img/${imgDetailSecond}`} alt={title} />
-                    </div>
-                </section>
+                {this.renderFourth(imgDetailSecond, title)}
                 {this.renderNext()}
                 <section className="all-project container">
                     <div data-delighter>
