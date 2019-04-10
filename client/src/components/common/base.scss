@@ -40,6 +40,7 @@
       right: 0;
       bottom: 0;
       overflow: hidden;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
       > div {
         position: relative;
       }
@@ -83,9 +84,6 @@
         margin-top: 50px;
       }
     }
-    img {
-      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    }
     p {
       margin-left: 50px;
       text-align: left;
@@ -109,7 +107,7 @@
       }
       > ul {
         position: unset;
-        margin: 30px 0 0 50px;
+        margin-top: 30px;
       }
       ul + div > a {
         width: 70%;
@@ -295,6 +293,7 @@
       text-align: center;
       > div {
         position: relative;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
       }
       h2 {
         margin-top: 20px;
@@ -410,12 +409,12 @@
     }
   }
   .next-project {
-    padding: 50px 80px 50px 0;
     text-align: right;
-    background-color: $green;
     h2 a {
+      padding: 50px 80px 50px 0;
       display: block;
       transition: 0.5s;
+      background-color: $green;
       &:hover {
         color: $green;
       }
