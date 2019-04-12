@@ -2,42 +2,29 @@
   "works": [
     {
       "title": "METAL REVISION.INC",
-      "description": "This is a great stream",
+      "description": "I worked on company site from Japan that is the customer can edit slogan, recruit info and products from CMS. This website using Bootstrap because time was one month. I hired the web designer, so i could also improve management skill from this",
       "thumbnail": "img-works-01.png",
-      "imgDetailFirst": "work-detail-sample.jpg",
+      "imgDetailFirst": "work-detail-sample.png",
       "imgDetailSecond": "work-detail-mobile.png",
       "typeOfJob": "Freelance",
       "category": "Web",
       "date": "Jun 2018",
-      "skills": "HTML CSS Javascript WordPress",
-      "projectUrl": "https://www.agent-grow.com/",
+      "skills": "HTML,CSS,jQuery,WordPress,Bootstrap",
+      "projectUrl": "http://www.metal-rev.co.jp",
       "id": 1
     },
     {
-      "title": "METAL REVISION.INC",
-      "description": "This is a great stream",
+      "title": "PHOTOGRAPHER",
+      "description": "This website is I worked on freelance job first time when i was student. Difficult part was develop WordPress.",
       "thumbnail": "img-works-02.png",
-      "imgDetailFirst": "work-detail-sample.jpg",
+      "imgDetailFirst": "hirata.png",
       "imgDetailSecond": "work-detail-mobile.png",
       "typeOfJob": "Freelance",
       "category": "Web",
-      "date": "Jun 2018",
-      "skills": "HTML CSS Javascript WordPress",
-      "projectUrl": "https://www.agent-grow.com/",
+      "date": "July 2016",
+      "skills": "HTML,CSS,Javascript,WordPress",
+      "projectUrl": "http://hiratatakaaki.com",
       "id": 2
-    },
-    {
-      "title": "CHAPITER DEUX",
-      "description": "This is a great stream",
-      "thumbnail": "img-works-03.png",
-      "imgDetailFirst": "work-detail-sample.jpg",
-      "imgDetailSecond": "work-detail-mobile.png",
-      "typeOfJob": "Freelance",
-      "category": "Web",
-      "date": "Jun 2018",
-      "skills": "HTML CSS Javascript WordPress",
-      "projectUrl": "https://www.agent-grow.com/",
-      "id": 3
     }
   ]
 }
