@@ -147,7 +147,7 @@
         margin-bottom: 30px;
     }
     section {
-        height: 100vh;
+        padding: 100px 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -400,6 +400,8 @@
     }
   }
   .next-project {
+    position: relative;
+    z-index: 1;
     text-align: right;
     h2 a {
       padding: 50px 80px 50px 0;
