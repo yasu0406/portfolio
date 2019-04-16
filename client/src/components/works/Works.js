@@ -17,10 +17,10 @@ class Works extends Component {
     }
 
     renderList() {
-        return this.props.works.map((work, index) => {
+        return this.props.works.map((work) => {
                 return (
                     <>
-                        <li data-delighter key={index}>
+                        <li data-delighter key={work.id}>
                             <div>
                                 <Link to={`/works-detail/${work.id}`}><img src={`/img/${work.thumbnail}`} alt={work.title}/></Link>
                                 <div className="pop-up"><h3><Link to={`/works-detail/${work.id}`}>View</Link></h3></div>

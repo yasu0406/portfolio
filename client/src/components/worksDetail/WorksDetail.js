@@ -18,12 +18,12 @@ class WorksDetail extends Component {
 
     }
     renderSkills(skillWord) {
-        return skillWord.map((skill) => {
-            return <li>{skill}</li>
+        return skillWord.map((skill, index) => {
+            return <li key={index}>{skill}</li>
         })
     }
     handler() {
-        var overlay = document.querySelector("#load-overlay")
+        var overlay = document.querySelector("#load-overlay");
         const promise = new Promise((resolve) => {
             resolve(
                 overlay.classList.remove("started")
@@ -82,7 +82,7 @@ class WorksDetail extends Component {
         if (!this.props.work) {
             return <div>Loading...</div>
         }
-        const {id, title, description, thumbnail, date, category, skills, projectUrl, imgDetailFirst, imgDetailSecond } = this.props.work;
+        const {title, description, thumbnail, date, category, skills, projectUrl, imgDetailFirst, imgDetailSecond } = this.props.work;
         let skillWord = skills.split(',');
         return (
             <div className="work-detail">
@@ -122,9 +122,7 @@ class WorksDetail extends Component {
                     <div data-delighter>
                         <h2 className="fade-up">All Project</h2>
                     </div>
-                    <ul key={id}>
-                        {this.renderList()}
-                    </ul>
+                    {this.renderList()}
                 </section>
                 <ul id="load-overlay" className="load-overlay" data-delighter>
                     <li className="fade-out-up"></li>

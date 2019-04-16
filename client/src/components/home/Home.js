@@ -8,6 +8,7 @@ import delighters from '../common/delighters';
 
 class Home extends Component {
     componentDidMount() {
+        delighters.init();
         const promise = new Promise((resolve) => {
             resolve(this.props.fetchWorks());
         });
@@ -17,10 +18,10 @@ class Home extends Component {
     }
 
     renderList () {
-        return this.props.works.map((work, index)  => {
+        return this.props.works.map((work)  => {
             return (
                 <>
-                    <section className="work-box container" key={index}>
+                    <section className="work-box container" key={work.id}>
                         <div>
                             <div>
                                 <Link to={`/works-detail/${work.id}`}><img src={`/img/${work.thumbnail}`} alt={work.title}/></Link>
@@ -46,7 +47,6 @@ class Home extends Component {
                                 <ul className="demo fade-up-in" data-delighter>
                                     <li><h1>Front End developer.</h1></li>
                                     <li><p>Hello, I’m Yasuhiro.</p></li>
-                                    <li></li>
                                 </ul>
                             </li>
                         </ul>
