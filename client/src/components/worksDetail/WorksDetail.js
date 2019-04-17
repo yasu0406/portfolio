@@ -15,7 +15,6 @@ class WorksDetail extends Component {
         promise.then(() =>
             delighters.init()
         );
-
     }
     renderSkills(skillWord) {
         return skillWord.map((skill, index) => {
@@ -40,7 +39,7 @@ class WorksDetail extends Component {
                 <>
                     <section className="next-project box" data-delighter>
                         <div className="box" data-delighter>
-                            <h2><Link onClick={this.handler} to={`/works-detail/${this.state.nextId}`}>Next Project</Link></h2>
+                            <h2><Link onClick={this.handler} to={`/works-detail/${this.state.nextId}`}>Next Work</Link></h2>
                         </div>
                     </section>
                 </>
@@ -54,8 +53,10 @@ class WorksDetail extends Component {
                     <>
                         <li key={work.id}>
                             <div data-delighter>
-                                <Link to={`/works-detail/${work.id}`}><img src={`/img/${work.thumbnail}`} alt={work.title}/></Link>
-                                <div className="pop-up"><h3><Link onClick={this.handler}  to={`/works-detail/${work.id}`}>View</Link></h3></div>
+                                <Link to={`/works-detail/${work.id}`} onClick={this.handler}>
+                                    <img src={`/img/${work.thumbnail}`} alt={work.title}/>
+                                    <div className="pop-up"><h3>{work.title}</h3></div>
+                                </Link>
                             </div>
                             <div className="blue" data-delighter></div>
                         </li>
@@ -120,7 +121,7 @@ class WorksDetail extends Component {
                 {this.renderNext()}
                 <section className="all-project container">
                     <div data-delighter>
-                        <h2 className="fade-up">All Project</h2>
+                        <h2 className="fade-up">All Works</h2>
                     </div>
                     {this.renderList()}
                 </section>

@@ -22,12 +22,16 @@ class Works extends Component {
                     <>
                         <li data-delighter key={work.id}>
                             <div>
-                                <Link to={`/works-detail/${work.id}`}><img src={`/img/${work.thumbnail}`} alt={work.title}/></Link>
-                                <div className="pop-up"><h3><Link to={`/works-detail/${work.id}`}>View</Link></h3></div>
+                                <Link to={`/works-detail/${work.id}`}>
+                                    <img src={`/img/${work.thumbnail}`} alt={work.title}/>
+                                    <div className="pop-up">
+                                        <h3>{work.title}</h3>
+                                    </div>
+                                </Link>
                                 <div className="blue" data-delighter></div>
                             </div>
-                            <h2 className="fade-up"><Link to={`/works-detail/${work.id}`}>{work.title}</Link></h2>
-                            <p className="fade-up">{`${work.typeOfJob} / ${work.category}`}</p>
+                            {/*<h2 className="fade-up"><Link to={`/works-detail/${work.id}`}>{work.title}</Link></h2>*/}
+                            {/*<p className="fade-up">{`${work.typeOfJob} / ${work.category}`}</p>*/}
                         </li>
                     </>
                 )
@@ -41,7 +45,7 @@ class Works extends Component {
                 <ul>
                     {this.renderList()}
                 </ul>
-                <ul className="load-overlay" data-delighter>
+                <ul id="load-overlay" className="load-overlay" data-delighter>
                     <li className="fade-out-up"></li>
                     <li className="fade-out-up"></li>
                     <li className="fade-out-up"></li>

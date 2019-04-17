@@ -24,7 +24,10 @@ class Home extends Component {
                     <section className="work-box container" key={work.id}>
                         <div>
                             <div>
-                                <Link to={`/works-detail/${work.id}`}><img src={`/img/${work.thumbnail}`} alt={work.title}/></Link>
+                                <Link to={`/works-detail/${work.id}`}>
+                                    <img src={`/img/${work.thumbnail}`} alt={work.title}/>
+                                    <div className="pop-up"></div>
+                                </Link>
                                 <div className="blue" data-delighter></div>
                             </div>
                         </div>
