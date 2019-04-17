@@ -450,6 +450,11 @@
   h2 {
     margin: 10px 0 20px;
     font-size: 20rem!important;
+    @media screen and (max-width: 768px) {
+      & {
+        font-size: 12rem!important;
+      }
+    }
   }
   ul {
     max-width: 500px;
