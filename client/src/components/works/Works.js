@@ -42,7 +42,7 @@ class Works extends Component {
     render() {
         return (
             <div className="works container">
-                <ul>
+                <ul className="work-list">
                     {this.renderList()}
                 </ul>
                 <ul id="load-overlay" className="load-overlay" data-delighter>
