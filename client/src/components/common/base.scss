@@ -433,3 +433,38 @@
     }
   }
 }
+
+/*********--404--***********/
+.error-page {
+  height: 300px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  p {
+    font-size: 3rem;
+  }
+  h2 {
+    margin: 10px 0 20px;
+    font-size: 20rem;
+  }
+  ul {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    li {
+      margin-left: 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+.error-page.open {
+  display: block;
+}

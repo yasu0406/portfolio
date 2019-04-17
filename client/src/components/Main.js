@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import {
     Route,
     BrowserRouter,
+    Switch,
+    Link
 } from "react-router-dom";
 import ScrollToTop from './common/ScrollToTop';
 import WorksDetail from "./worksDetail/WorksDetail";
@@ -19,7 +21,17 @@ class Main extends Component {
     componentDidMount() {
         delighters.init();
     }
-
+    Page404 = () => (
+        <div className="error-page container">
+            <p>This is not the page looking for</p>
+            <h2>404</h2>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/works">Works</Link></li>
+            </ul>
+        </div>
+    );
     render() {
         return (
             <BrowserRouter>
@@ -27,10 +39,13 @@ class Main extends Component {
                 <div>
                     <Navigation />
                     <div className="content">
-                        <Route path="/" exact component={Home}/>
-                        <Route path="/about" exact component={About}/>
-                        <Route path="/works" exact component={Works}/>
-                        <Route path="/works-detail/:id" exact component={WorksDetail}/>
+                        <Switch>
+                            <Route path="/" exact component={Home}/>
+                            <Route path="/about" exact component={About}/>
+                            <Route path="/works" exact component={Works}/>
+                            <Route path="/works-detail/:id" exact component={WorksDetail} />
+                            <Route component={this.Page404} />
+                        </Switch>
                     </div>
                 </div>
                 </ScrollToTop>

@@ -56,16 +56,15 @@ class WorksDetail extends Component {
                                 <Link to={`/works-detail/${work.id}`} onClick={this.handler}>
                                     <img src={`/img/${work.thumbnail}`} alt={work.title}/>
                                     <div className="pop-up"><h3>{work.title}</h3></div>
+                                    <div className="blue" data-delighter></div>
                                 </Link>
                             </div>
-                            <div className="blue" data-delighter></div>
                         </li>
                     </>
                 )
             }
         })
     }
-
     renderFourth(imgDetailSecond, title) {
         if (!imgDetailSecond) {
             return (
@@ -79,9 +78,41 @@ class WorksDetail extends Component {
             )
         }
     }
+    page404() {
+        var loadBox = document.querySelector("#load-box");
+        var errorPage = document.querySelector("#error-page");
+        if(loadBox != null) {
+            loadBox.classList.add("hide");
+        }
+        if(errorPage != null) {
+            errorPage.classList.remove("hide");
+        }
+    }
     render() {
         if (!this.props.work) {
-            return <div>Loading...</div>
+            return (
+                <>
+                <div id="load-box" onLoadStart={setTimeout(this.page404, 5000)}>
+                    <h2>Loading...</h2>
+                </div>
+                <div id="error-page" className="error-page container hide">
+                    <p>This is not the page looking for</p>
+                    <h2>404</h2>
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/works">Works</Link></li>
+                    </ul>
+                    <ul id="load-overlay" className="load-overlay" data-delighter>
+                        <li className="fade-out-up"></li>
+                        <li className="fade-out-up"></li>
+                        <li className="fade-out-up"></li>
+                        <li className="fade-out-up"></li>
+                        <li className="fade-out-up"></li>
+                    </ul>
+                </div>
+                </>
+            );
         }
         const {title, description, thumbnail, date, category, skills, projectUrl, imgDetailFirst, imgDetailSecond } = this.props.work;
         let skillWord = skills.split(',');
@@ -123,7 +154,9 @@ class WorksDetail extends Component {
                     <div data-delighter>
                         <h2 className="fade-up">All Works</h2>
                     </div>
-                    {this.renderList()}
+                    <ul className="work-list">
+                        {this.renderList()}
+                    </ul>
                 </section>
                 <ul id="load-overlay" className="load-overlay" data-delighter>
                     <li className="fade-out-up"></li>
