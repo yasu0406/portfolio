@@ -51,12 +51,11 @@ class WorksDetail extends Component {
             if(work.id != this.props.match.params.id) {
                 return (
                     <>
-                        <li key={work.id}>
-                            <div data-delighter>
+                        <li key={work.id} className="fade-up">
+                            <div>
                                 <Link to={`/works-detail/${work.id}`} onClick={this.handler}>
                                     <img src={`/img/${work.thumbnail}`} alt={work.title}/>
                                     <div className="pop-up"><h3>{work.title}</h3></div>
-                                    <div className="blue" data-delighter></div>
                                 </Link>
                             </div>
                         </li>
@@ -154,7 +153,7 @@ class WorksDetail extends Component {
                     <div data-delighter>
                         <h2 className="fade-up">All Works</h2>
                     </div>
-                    <ul className="work-list">
+                    <ul className="work-list" data-delighter>
                         {this.renderList()}
                     </ul>
                 </section>
