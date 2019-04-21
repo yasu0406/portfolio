@@ -5,6 +5,7 @@ class About extends Component {
     componentDidMount() {
         delighters.init();
     }
+
     render() {
         return (
                 <div className="about">
@@ -49,15 +50,6 @@ class About extends Component {
                                     </ul>
                                 </div>
                             </div>
-                            <div  data-delighter>
-                                <div className="left fade-up">
-                                    <h2>Policy</h2>
-                                </div>
-                                <div className="right" data-delighter>
-                                    <p>I am currently studying at Cornerstone International Community College of Canada (CICCC) for Web and Mobile Development program.
-                                        In Japan, I worked as a frontend engineer for two years and backend engineer for one year and 6 months. I am working volunteer at the web company and a freelance job.</p>
-                                </div>
-                            </div>
                         </div>
                     </section>
                     <section className="about-me">
@@ -68,7 +60,7 @@ class About extends Component {
                                 </div>
                                 <div className="right" data-delighter>
                                     <p>I am currently studying at Cornerstone International Community College of Canada (CICCC) for Web and Mobile Development program.
-                                        In Japan, I worked as a frontend engineer for two years and backend engineer for one year and 6 months. I am working volunteer at the web company and a freelance job.</p>
+                                        In Japan, I worked as a frontend engineer for two years and backend engineer for one year and 6 months. I am working volunteer at the web company and a freelance job.<br/><br/>Love create web apps and mobile apps with React, soccer.</p>
                                 </div>
                             </div>
                             <div data-delighter>
@@ -78,11 +70,11 @@ class About extends Component {
                                 <div className="right">
                                     <dl data-delighter>
                                         <dt className="fade-up">2016-2017</dt>
-                                        <dd className="fade-up"><a className="square-btn" href="https://www.agent-grow.com/" target="_blank">AGENTGROW Inc in Tokyo</a></dd>
+                                        <dd className="fade-up"><a className="square-btn" href={"https://www.agent-grow.com/"} target="_blank">Frontend developer and Backend developer at AGENTGROW Inc</a></dd>
                                         <dt className="fade-up">2015-2016</dt>
-                                        <dd className="fade-up"><a className="square-btn" href="https://www.agent-grow.com/" target="_blank">PENSEUR Inc in Osaka</a></dd>
+                                        <dd className="fade-up"><a className="square-btn" href={"https://www.penseur.co.jp/"} target="_blank">Frontend developer at PENSEUR Inc</a></dd>
                                         <dt className="fade-up">2014-2015</dt>
-                                        <dd className="fade-up"><a className="square-btn" href="https://www.agent-grow.com/" target="_blank">MITELI Ltd in Osaka</a></dd>
+                                        <dd className="fade-up"><a className="square-btn" href={"http://www.miteli.co.jp/"} target="_blank">Frontend developer at MITELI Ltd</a></dd>
                                     </dl>
                                 </div>
                             </div>
