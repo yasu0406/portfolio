@@ -43,7 +43,7 @@ class Main extends Component {
                             <Route path="/" exact component={Home}/>
                             <Route path="/about" exact component={About}/>
                             <Route path="/works" exact component={Works}/>
-                            <Route path="/works-detail/:id" exact component={WorksDetail} />
+                            <Route path="/works-detail/:slug" exact component={WorksDetail} />
                             <Route component={this.Page404} />
                         </Switch>
                     </div>
