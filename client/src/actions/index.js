@@ -5,13 +5,11 @@ import {
 } from './types';
 
 export const fetchWorks = () => async dispatch => {
-    const response = await works.get('/works');
-
-    dispatch({ type: FETCH_WORKS, payload: response.data });
+    const response = await works.get('/wp-json/wp/v2/posts/');
+    dispatch({ type: FETCH_WORKS, payload: response.data});
 };
 
-export const fetchWork = id => async dispatch => {
-    const response = await works.get(`/works/${id}`);
-
-    dispatch({ type: FETCH_WORK, payload: response.data });
+export const fetchWork = slug => async dispatch => {
+    const response = await works.get(`/wp-json/wp/v2/posts?slug=${slug}`);
+    dispatch({ type: FETCH_WORK, payload: response.data[0] });
 };
