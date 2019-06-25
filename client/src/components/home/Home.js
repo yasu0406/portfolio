@@ -18,23 +18,23 @@ class Home extends Component {
     }
 
     renderList () {
-        return this.props.works.map((work)  => {
+        return this.props.works.map((work) => {
             return (
                 <>
                     <section className="work-box container" key={work.id}>
                         <div>
                             <div className="work-list">
-                                <Link to={`/works-detail/${work.id}`}>
-                                    <img src={`/img/${work.thumbnail}`} alt={work.title}/>
+                                <Link to={`/works-detail/${work.slug}`}>
+                                    <img src={work.jetpack_featured_media_url} alt={work.title.rendered}/>
                                     <div className="pop-up"></div>
                                 </Link>
                                 <div className="blue" data-delighter></div>
                             </div>
                         </div>
                         <ul className="fade-up-in" data-delighter>
-                            <li><h2><Link to={`/works-detail/${work.id}`}>{work.title}</Link></h2></li>
-                            <li>{`${work.typeOfJob} / ${work.category}`}</li>
-                            <li><Link className="btn" to={`/works-detail/${work.id}`}>Detail →</Link></li>
+                            <li><h2><Link to={`/works-detail/${work.slug}`}>{work.title.rendered}</Link></h2></li>
+                            <li>{`${work.acf.typeofjob} / ${work.acf.category}`}</li>
+                            <li><Link className="btn" to={`/works-detail/${work.slug}`}>Detail →</Link></li>
                         </ul>
                     </section>
                 </>
