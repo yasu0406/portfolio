@@ -22,10 +22,10 @@ class Works extends Component {
                     <>
                         <li data-delighter key={work.id}>
                             <div>
-                                <Link to={`/works-detail/${work.id}`}>
-                                    <img src={`/img/${work.thumbnail}`} alt={work.title}/>
+                                <Link to={`/works-detail/${work.slug}`}>
+                                    <img src={work.jetpack_featured_media_url} alt={work.title.rendered}/>
                                     <div className="pop-up">
-                                        <h3>{work.title}</h3>
+                                        <h3>{work.title.rendered}</h3>
                                     </div>
                                 </Link>
                                 <div className="blue" data-delighter></div>
