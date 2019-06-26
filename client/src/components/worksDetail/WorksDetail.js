@@ -5,21 +5,13 @@ import { fetchWork, fetchWorks } from "../../actions";
 import {Link} from "react-router-dom";
 
 class WorksDetail extends Component {
-    state = {
-        nextId: 1
-    };
     componentDidMount() {
         const promise = new Promise((resolve) => {
-            resolve(this.props.fetchWork(this.props.match.params.id, this.props.fetchWorks()));
+            resolve(this.props.fetchWork(this.props.match.params.slug, this.props.fetchWorks()));
         });
         promise.then(() =>
             delighters.init()
         );
-    }
-    renderSkills(skillWord) {
-        return skillWord.map((skill, index) => {
-            return <li key={index}>{skill}</li>
-        })
     }
     handler() {
         var overlay = document.querySelector("#load-overlay");
@@ -33,13 +25,18 @@ class WorksDetail extends Component {
         )
     }
     renderNext() {
-        this.state.nextId =+ this.props.match.params.id + 1;
-        if(this.props.works.length != this.props.match.params.id) {
+        var nextId = 0;
+        for(var i = 0; i < this.props.works.length; i++) {
+            if(this.props.works[i].slug == this.props.match.params.slug) {
+                nextId = i + 1;
+            }
+        }
+        if(this.props.works.length !== nextId) {
             return (
                 <>
                     <section className="next-project box" data-delighter>
                         <div className="box" data-delighter>
-                            <h2><Link onClick={this.handler} to={`/works-detail/${this.state.nextId}`}>Next Work</Link></h2>
+                            <h2><Link onClick={this.handler} to={`/works-detail/${this.props.works[nextId].slug}`}>Next Work</Link></h2>
                         </div>
                     </section>
                 </>
@@ -48,14 +45,14 @@ class WorksDetail extends Component {
     }
     renderList() {
         return this.props.works.map((work)  => {
-            if(work.id != this.props.match.params.id) {
+            if(work.slug != this.props.match.params.slug) {
                 return (
                     <>
                         <li key={work.id} className="fade-up">
                             <div>
-                                <Link to={`/works-detail/${work.id}`} onClick={this.handler}>
-                                    <img src={`/img/${work.thumbnail}`} alt={work.title}/>
-                                    <div className="pop-up"><h3>{work.title}</h3></div>
+                                <Link to={`/works-detail/${work.slug}`} onClick={this.handler}>
+                                    <img src={work.jetpack_featured_media_url} alt={work.title.rendered}/>
+                                    <div className="pop-up"><h3>{work.title.rendered}</h3></div>
                                 </Link>
                             </div>
                         </li>
@@ -87,6 +84,32 @@ class WorksDetail extends Component {
             errorPage.classList.remove("hide");
         }
     }
+    projectUri(stillwork, projecturl) {
+
+        if(stillwork.value === "false") {
+            return (
+                <span className="btn">Coming soon...</span>
+            );
+        } else {
+            return(
+                <a className="btn" href={projecturl} target="_blank">View</a>
+            )
+        }
+    }
+    renderThird(title, acf) {
+        if(acf.secondimg) {
+            return(
+                <>
+                <section className="third-content">
+                    <div>
+                        <img src={acf.secondimg} alt={title.rendered} />
+                        <div className="blue" data-delighter></div>
+                    </div>
+                </section>
+                </>
+            )       
+        }
+    }
     render() {
         if (!this.props.work) {
             return (
@@ -113,43 +136,35 @@ class WorksDetail extends Component {
                 </>
             );
         }
-        const {title, description, thumbnail, date, category, skills, projectUrl, imgDetailFirst, imgDetailSecond } = this.props.work;
-        let skillWord = skills.split(',');
+        const {title, content, jetpack_featured_media_url, acf } = this.props.work
         return (
             <div className="work-detail">
-                <section className="first-content">
-                    <h1>{title}</h1>
-                    <p><img src={`/img/${thumbnail}`} alt={title} /></p>
+                <section className="first-content" style={{background: `url(${jetpack_featured_media_url}) center no-repeat`}}>
+                        <h1>{title.rendered}</h1>
                 </section>
                 <section className="second-content">
                     <div className="container">
                         <ul className="fade-up-in" data-delighter>
-                            <li>{description}</li>
+                            <li dangerouslySetInnerHTML={{ __html: content.rendered }}></li>
                             <li>
                                 <ul>
-                                    <li>Date - {date}</li>
-                                    <li>Category - {category}</li>
+                                    <li>Date - {acf.date}</li>
+                                    <li>Category - {acf.category}</li>
                                     <li>
                                         <ul>
-                                            {this.renderSkills(skillWord)}
                                         </ul>
                                     </li>
-                                    <li><a className="btn" href={projectUrl} target="_blank">View</a></li>
+                                    <li>
+                                        {this.projectUri(acf.stillwork, acf.projecturl)}
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
-
                     </div>
                 </section>
-                <section className="third-content">
-                    <div>
-                        <img src={`/img/${imgDetailFirst}`} alt={title} />
-                        <div className="blue" data-delighter></div>
-                    </div>
-                </section>
-                {this.renderFourth(imgDetailSecond, title)}
+                {this.renderThird(title, acf)}
                 {this.renderNext()}
-                <section className="all-project container">
+                 <section className="all-project container">
                     <div data-delighter>
                         <h2 className="fade-up">All Works</h2>
                     </div>
@@ -171,7 +186,7 @@ class WorksDetail extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        work: state.works[ownProps.match.params.id],
+        work: state.works[ownProps.match.params.slug],
         works: Object.values(state.works)
     };
 };
