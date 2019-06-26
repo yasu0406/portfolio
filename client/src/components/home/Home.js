@@ -16,12 +16,11 @@ class Home extends Component {
             delighters.init()
         );
     }
-
     renderList () {
         return this.props.works.map((work) => {
             return (
                 <>
-                    <section className="work-box container" key={work.id}>
+                    <section className="work-box container" key={work.slug}>
                         <div>
                             <div className="work-list">
                                 <Link to={`/works-detail/${work.slug}`}>
