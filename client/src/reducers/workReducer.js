@@ -6,10 +6,10 @@ import {
 
 export default (state = {}, action) => {
     switch (action.type) {
-        case FETCH_WORK:
-            return {...state, [action.payload.id]: action.payload};
         case FETCH_WORKS:
-            return {...state, ..._.mapKeys(action.payload, 'id')};
+            return {...state, ..._.mapKeys(action.payload, 'slug')};
+        case FETCH_WORK:
+        return {...state, [action.payload.slug]: action.payload};
         default:
             return state;
     }
