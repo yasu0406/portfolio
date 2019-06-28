@@ -88,7 +88,7 @@ class WorksDetail extends Component {
 
         if(stillwork.value === "false") {
             return (
-                <span className="btn">Coming soon...</span>
+                <span className="coming-text">Coming soon...</span>
             );
         } else {
             return(
