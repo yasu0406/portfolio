@@ -47,8 +47,8 @@ class Home extends Component {
                         <ul className="main-visual">
                             <li className="left">
                                 <ul className="demo fade-up-in" data-delighter>
-                                    <li><h1>Hello, I’m Yasuhiro.</h1></li>
-                                    <li><p>Front End developer.</p></li>
+                                    <li><h1>Hello <span className="sp-line-break">I’m Yasuhiro.</span></h1></li>
+                                    <li><p>Front End Developer.</p></li>
                                 </ul>
                             </li>
                         </ul>
