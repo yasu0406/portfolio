@@ -18,7 +18,7 @@
       }
       @media screen and (max-width: 468px){
         p {
-          font-size: 3rem;
+          font-size: 2.5rem;
         }
       }
     }
@@ -128,7 +128,7 @@
 }
 /*********--about--***********/
 .about {
-    h2 {
+    h2, h2 .sp-line-break {
         font-size: 4rem !important;
         font-weight: 400;
     }
