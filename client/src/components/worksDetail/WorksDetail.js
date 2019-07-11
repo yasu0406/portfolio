@@ -148,7 +148,7 @@ class WorksDetail extends Component {
                             <li dangerouslySetInnerHTML={{ __html: content.rendered }}></li>
                             <li>
                                 <ul>
-                                    <li>Date - {acf.date}</li>
+                                    <li>Date - {acf.workdate}</li>
                                     <li>Category - {acf.category}</li>
                                     <li>
                                         <ul>
