@@ -8,7 +8,6 @@ import delighters from '../common/delighters';
 
 class Home extends Component {
     componentDidMount() {
-        delighters.init();
         const promise = new Promise((resolve) => {
             resolve(this.props.fetchWorks());
         });
