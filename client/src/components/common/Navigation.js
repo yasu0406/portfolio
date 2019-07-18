@@ -31,7 +31,7 @@ class Navigation extends Component {
                         <li><a href="https://www.linkedin.com/in/yasuhiro-katayama-118423160/" target="_blank" className="fa fa-linkedin"></a></li>
                         <li><a href="https://github.com/yasu0406" target="_blank" className="fa fa-github"></a></li>
                         <li><a href="https://www.facebook.com/yasuhiro.katayama2" target="_blank" className="fa fa-facebook"></a></li>
-                        <li><a href="/img/resume.pdf" target="_blank" className="fa fa-file-text-o"></a></li>
+                        <li><a href="https://yasuhiro-k.com/img/resume.pdf" target="_blank" className="fa fa-file-text-o"></a></li>
                     </ul>
                 </div>
                 <div onClick={this.remove.bind(this)}>
