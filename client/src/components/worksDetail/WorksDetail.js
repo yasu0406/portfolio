@@ -48,7 +48,7 @@ class WorksDetail extends Component {
             if(work.slug != this.props.match.params.slug) {
                 return (
                     <>
-                        <li key={work.id} className="fade-up">
+                        <li key={work.slug} className="fade-up">
                             <div>
                                 <Link to={`/works-detail/${work.slug}`} onClick={this.handler}>
                                     <img src={work.jetpack_featured_media_url} alt={work.title.rendered}/>

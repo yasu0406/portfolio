@@ -20,7 +20,7 @@ class Works extends Component {
         return this.props.works.map((work) => {
                 return (
                     <>
-                        <li data-delighter key={work.id}>
+                        <li data-delighter key={work.slug}>
                             <div>
                                 <Link to={`/works-detail/${work.slug}`}>
                                     <img src={work.jetpack_featured_media_url} alt={work.title.rendered}/>
@@ -30,8 +30,6 @@ class Works extends Component {
                                 </Link>
                                 <div className="blue" data-delighter></div>
                             </div>
-                            {/*<h2 className="fade-up"><Link to={`/works-detail/${work.id}`}>{work.title}</Link></h2>*/}
-                            {/*<p className="fade-up">{`${work.typeOfJob} / ${work.category}`}</p>*/}
                         </li>
                     </>
                 )
