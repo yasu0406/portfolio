@@ -4,26 +4,165 @@
   .main-visual {
     height: 100vh;
     display: flex;
-    .left {
-      padding: 0 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: $mainColor;
-      position: relative;
-      p {
-        font-weight: 900;
-        font-size: 5rem;
-        color: $green;
+    justify-content: flex-end;
+    h1 {
+      width: max-content;
+      height: max-content;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      .blue {
+        color: #1B2FCE;
       }
-      @media screen and (max-width: 468px){
-        p {
-          font-size: 2.5rem;
+    }
+    .scroll {
+      width: 50%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .chevron {
+      position: absolute;
+      width: 28px;
+      height: 8px;
+      opacity: 0;
+      transform: scale3d(0.5, 0.5, 0.5);
+      animation: move 3s ease-out infinite;
+    }
+    
+    .chevron:first-child {
+      animation: move 3s ease-out 1s infinite;
+    }
+    
+    .chevron:nth-child(2) {
+      animation: move 3s ease-out 2s infinite;
+    }
+    
+    .chevron:before,
+    .chevron:after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 51%;
+      background: #fff;
+    }
+    
+    .chevron:before {
+      left: 0;
+      transform: skew(0deg, 30deg);
+    }
+    
+    .chevron:after {
+      right: 0;
+      width: 50%;
+      transform: skew(0deg, -30deg);
+    }
+    
+    @keyframes move {
+      25% {
+        opacity: 1;
+    
+      }
+      33% {
+        opacity: 1;
+        transform: translateY(30px);
+      }
+      67% {
+        opacity: 1;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+      }
+    }
+    
+    .text {
+      display: block;
+      margin-top: 150px;
+      font-size: 1.2rem;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+      opacity: .25;
+      animation: pulse 2s linear alternate infinite;
+    }
+    
+    @keyframes pulse {
+      to {
+        opacity: 1;
+      }
+    }
+    .about-me {
+      width: 50%;
+      padding: 0 0 50px 50px;
+      background: url(/img/main-profile.png) right bottom no-repeat;;
+      background-color: #E2E2E2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      h2 {
+        margin-bottom: 10px; 
+        color: $mainColor;
+      }
+      p, span {
+        color: #3C3C3C;
+        font-weight: 300;
+        font-size: 2rem;
+      }
+      span {
+        display: block;
+      }
+      @media screen and (max-width: 468px) {
+        & {
+          width: 100%;
+          background: none;
+          h2 {
+            margin-bottom: 10px; 
+            color: white;
+          }
+          p, span {
+            color: #3C3C3C;
+            font-weight: 300;
+            font-size: 2rem;
+          }
         }
       }
     }
-    @media screen and (max-width: 1024px){
-      height: 50vh;
+    @media screen and (max-width: 1024px) {
+      & {
+        margin-bottom: 150px;
+        background-size: contain;
+      }
+    }
+    @media screen and (max-width: 468px) {
+      & {
+        height: 50vh;
+        position: relative;
+      }
+      h1 {
+        top: 30%;;
+        bottom:unset;
+        .blue {
+          color: white;
+        }
+      }
+      .scroll {
+        display: none;
+      }
+      .about-me {
+        width: 100%;
+        padding: 0 50px;
+        p, span {
+          font-size: 1.6rem;
+          color: white;
+        }
+      }
     }
   }
   .work-box {

@@ -43,14 +43,19 @@ class Home extends Component {
         return (
                 <div className="home">
                     <section>
-                        <ul className="main-visual">
-                            <li className="left">
-                                <ul className="demo fade-up-in" data-delighter>
-                                    <li><h1>Hello <span className="sp-line-break">I’m Yasuhiro.</span></h1></li>
-                                    <li><p>Front End Developer.</p></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <div className="main-visual">
+                            <h1 className="knockout">Y / <span className="blue title-span">K</span></h1>
+                            <div className="scroll">
+                                <div className="chevron"></div>
+                                <div className="chevron"></div>
+                                <div className="chevron"></div>
+                                <span className="text">Scroll down</span>
+                            </div>
+                            <div className="about-me">
+                                <h2>Front-EndDeveloper</h2>
+                                <p>My name is Yasu<span>I have 4+ years of experience.</span> Specialized in React and Word Press</p>
+                            </div> 
+                        </div>    
                     </section>
                     {this.renderList()}
                     <ul className="load-overlay" data-delighter>
