@@ -14,7 +14,7 @@ class About extends Component {
                             <h1 className="fade-up">Yasuhiro<span className="sp-line-break title-span">Katayama.</span><span className="line-break fade-up">Front End Developer.</span></h1>
                         </div>
                         <div className="right">
-                            <img src="/img/img-profile.png" alt=""/>
+                            <img src="/img/img-profile.jpg" alt="yasuhiro's picture"/>
                             <div className="blue" data-delighter></div>
                         </div>
                     </section>
