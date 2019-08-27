@@ -11,7 +11,7 @@ class About extends Component {
                 <div className="about">
                     <section className="my-name container">
                         <div className="left" data-delighter>
-                            <h1 className="fade-up">Yasuhiro<span className="sp-line-break title-span">Katayama.</span><span className="line-break fade-up">Front End Developer.</span></h1>
+                            <h1 className="fade-up">Yasuhiro<span className="sp-line-break title-span">Katayama.</span><span className="line-break fade-up">Front-End Developer.</span></h1>
                         </div>
                         <div className="right">
                             <img src="/img/img-profile.jpg" alt="yasuhiro's picture"/>
