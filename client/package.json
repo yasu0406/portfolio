@@ -5,7 +5,7 @@
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.10",
     "axios": "^0.18.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-anime": "^2.2.0",
